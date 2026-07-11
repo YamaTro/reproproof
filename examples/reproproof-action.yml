@@ -1,0 +1,24 @@
+name: ReproProof sample
+on:
+  workflow_dispatch:
+    inputs:
+      issue_file:
+        description: Committed Markdown issue file
+        required: true
+        default: fixtures/issues/node-add.md
+permissions:
+  contents: read
+jobs:
+  reproduce:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: YamaTro/reproproof@v0.1.0
+        with:
+          issue-file: ${{ inputs.issue_file }}
+          execute: 'true'
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: reproproof-report
+          path: .reproproof/action

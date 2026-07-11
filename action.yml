@@ -1,0 +1,37 @@
+name: ReproProof
+description: Generate evidence-first bug reproduction reports and reviewable failing-test patches.
+inputs:
+  issue-file:
+    description: Markdown issue file in the caller repository.
+    required: true
+  execute:
+    description: Execute the candidate in a disposable copy.
+    required: false
+    default: 'false'
+  output:
+    description: Output directory in the caller repository.
+    required: false
+    default: .reproproof/action
+runs:
+  using: composite
+  steps:
+    - name: Install ReproProof
+      shell: bash
+      working-directory: ${{ github.action_path }}
+      run: corepack pnpm install --frozen-lockfile && corepack pnpm build
+    - name: Analyze issue
+      shell: bash
+      if: inputs.execute != 'true'
+      env:
+        REPROPROOF_ISSUE_FILE: ${{ inputs.issue-file }}
+        REPROPROOF_OUTPUT: ${{ inputs.output }}
+      run: node "$GITHUB_ACTION_PATH/packages/cli/dist/index.js" --repo "$GITHUB_WORKSPACE" --issue "$GITHUB_WORKSPACE/$REPROPROOF_ISSUE_FILE" --provider mock --output "$GITHUB_WORKSPACE/$REPROPROOF_OUTPUT"
+    - name: Analyze and execute issue
+      shell: bash
+      if: inputs.execute == 'true'
+      env:
+        REPROPROOF_ISSUE_FILE: ${{ inputs.issue-file }}
+        REPROPROOF_OUTPUT: ${{ inputs.output }}
+      run: |
+        docker build --tag reproproof-sandbox:0.1.0 --file "$GITHUB_ACTION_PATH/sandbox/Dockerfile" "$GITHUB_ACTION_PATH/sandbox"
+        node "$GITHUB_ACTION_PATH/packages/cli/dist/index.js" --repo "$GITHUB_WORKSPACE" --issue "$GITHUB_WORKSPACE/$REPROPROOF_ISSUE_FILE" --provider mock --execute --output "$GITHUB_WORKSPACE/$REPROPROOF_OUTPUT"

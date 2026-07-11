@@ -1,0 +1,31 @@
+name: Adapter proposal
+description: Propose a language or test-framework adapter with a real maintenance use case.
+title: '[Adapter]: '
+labels: ['enhancement', 'adapter']
+body:
+  - type: input
+    id: ecosystem
+    attributes:
+      label: Language or framework
+    validations:
+      required: true
+  - type: textarea
+    id: usecase
+    attributes:
+      label: Maintainer use case and evidence
+      description: Link to public documentation or explain your own project need. Do not post unsolicited issues elsewhere.
+    validations:
+      required: true
+  - type: textarea
+    id: command
+    attributes:
+      label: Safe command design
+      description: Executable, argv, configuration detection, and security considerations.
+    validations:
+      required: true
+  - type: textarea
+    id: fixture
+    attributes:
+      label: Licensed fixture plan
+    validations:
+      required: true

@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Security vulnerability
+    url: https://github.com/YamaTro/reproproof/security/advisories/new
+    about: Report vulnerabilities privately.
+  - name: Design and support discussion
+    url: https://github.com/YamaTro/reproproof/discussions
+    about: Ask questions or discuss larger ideas after Discussions is enabled.

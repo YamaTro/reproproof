@@ -1,0 +1,32 @@
+{
+  "name": "reproproof",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Evidence-first bug reproduction for open-source maintainers",
+  "license": "Apache-2.0",
+  "packageManager": "pnpm@10.12.4",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "build": "corepack pnpm -r --if-present build",
+    "clean": "corepack pnpm -r --if-present clean",
+    "lint": "eslint .",
+    "typecheck": "corepack pnpm -r --if-present typecheck",
+    "test": "vitest run tests",
+    "test:unit": "vitest run tests/unit",
+    "test:integration": "vitest run tests/integration",
+    "test:e2e": "vitest run tests/e2e",
+    "check": "corepack pnpm lint && corepack pnpm build && corepack pnpm typecheck && corepack pnpm test",
+    "demo": "node packages/cli/dist/index.js --repo fixtures/node-test --issue fixtures/issues/node-add.md --provider mock --unsafe-local-execute --output .reproproof/demo",
+    "sandbox:build": "docker build --tag reproproof-sandbox:0.1.0 --file sandbox/Dockerfile sandbox"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.29.0",
+    "@types/node": "^24.0.3",
+    "eslint": "^9.29.0",
+    "typescript": "^5.8.3",
+    "typescript-eslint": "^8.34.1",
+    "vitest": "^3.2.4"
+  }
+}

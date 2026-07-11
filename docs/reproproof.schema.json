@@ -1,0 +1,34 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/YamaTro/reproproof/blob/main/docs/reproproof.schema.json",
+  "title": "ReproProof configuration",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "provider": { "enum": ["mock", "local", "openai", "anthropic"] },
+    "execute": { "type": "boolean" },
+    "sandbox": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "network": { "const": "none" },
+        "timeoutSeconds": { "type": "integer", "minimum": 1, "maximum": 3600 },
+        "memoryMb": { "type": "integer", "minimum": 128, "maximum": 32768 },
+        "cpus": { "type": "number", "exclusiveMinimum": 0, "maximum": 32 },
+        "diskMb": { "type": "integer", "minimum": 64, "maximum": 32768 }
+      },
+      "required": ["network", "timeoutSeconds", "memoryMb", "cpus", "diskMb"]
+    },
+    "github": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "createDraftPullRequest": { "type": "boolean" },
+        "autoMerge": { "const": false }
+      },
+      "required": ["createDraftPullRequest", "autoMerge"]
+    },
+    "telemetry": { "const": false }
+  },
+  "required": ["provider", "execute", "sandbox", "github", "telemetry"]
+}

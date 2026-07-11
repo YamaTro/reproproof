@@ -1,0 +1,23 @@
+{
+  "name": "@reproproof/cli",
+  "version": "0.1.0",
+  "type": "module",
+  "license": "Apache-2.0",
+  "bin": { "reproproof": "dist/index.js" },
+  "files": ["dist"],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "start": "node dist/index.js",
+    "clean": "node -e \"require('fs').rmSync('dist',{recursive:true,force:true})\""
+  },
+  "dependencies": {
+    "@reproproof/core": "workspace:*",
+    "@reproproof/language-node": "workspace:*",
+    "@reproproof/language-python": "workspace:*",
+    "@reproproof/provider-anthropic": "workspace:*",
+    "@reproproof/provider-local": "workspace:*",
+    "@reproproof/provider-mock": "workspace:*",
+    "@reproproof/provider-openai": "workspace:*"
+  }
+}

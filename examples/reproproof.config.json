@@ -1,0 +1,17 @@
+{
+  "$schema": "../docs/reproproof.schema.json",
+  "provider": "mock",
+  "execute": false,
+  "sandbox": {
+    "network": "none",
+    "timeoutSeconds": 60,
+    "memoryMb": 1024,
+    "cpus": 1,
+    "diskMb": 1024
+  },
+  "github": {
+    "createDraftPullRequest": false,
+    "autoMerge": false
+  },
+  "telemetry": false
+}
