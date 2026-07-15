@@ -12,11 +12,12 @@ Goals are not achievements. Actuals are updated only with evidence.
 - Conduct five maintainer interviews and three opt-in trials; do not send unsolicited issues or PRs.
 - Publish the English/Japanese documentation and benchmark method.
 
-### Actuals as of 2026-07-11
+### Actuals as of 2026-07-16
 
 - Local monorepo, CLI, providers, Node/Python adapters, reports, two fixtures, and local quality gates implemented.
 - Docker controls implemented but not live-validated because Docker is absent locally.
-- Public repository, release, interviews, and external users: not achieved.
+- Public repository, documentation site, GitHub-hosted CI, CodeQL, and Discussions: achieved.
+- v0.1.0 release, interviews, and external users: not yet achieved.
 
 ## Days 31–60
 

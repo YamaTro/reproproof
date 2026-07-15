@@ -17,4 +17,4 @@ ReproProof turns bug-report prose into structured analysis, a reviewable failing
 - [Program eligibility](program-eligibility.md)
 - [Launch drafts](launch-materials.md)
 
-This pre-release documentation makes no claim of external adoption or program acceptance.
+This release-candidate documentation makes no claim of external adoption or program acceptance.

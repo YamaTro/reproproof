@@ -29,3 +29,25 @@ jobs:
         run: pnpm install --frozen-lockfile
       - name: Verify
         run: pnpm check
+  action-smoke:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Run the local composite Action in analysis-only mode
+        uses: ./
+        with:
+          issue-file: fixtures/issues/node-add.md
+          output: .reproproof/action-smoke
+      - name: Verify Action artifacts
+        shell: bash
+        run: |
+          test -s .reproproof/action-smoke/report.md
+          test -s .reproproof/action-smoke/report.json
+          test -s .reproproof/action-smoke/candidate.patch
