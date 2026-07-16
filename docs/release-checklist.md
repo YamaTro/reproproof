@@ -9,17 +9,18 @@ Do not mark an unchecked item complete without evidence.
 - [x] Node and Python controlled E2E fixtures produce verified assertion failures.
 - [x] Mock mode reports zero tokens and zero estimated API cost.
 - [x] npm returned 404 for `reproproof` and `@reproproof/cli` on 2026-07-11, indicating no package at those exact names at that time.
-- [ ] GitHub public API confirms repository name availability immediately before creation. A network approval limit prevented the final API query locally.
+- [x] Public repository is available at https://github.com/YamaTro/reproproof.
 - [ ] Docker sandbox image builds and both fixtures pass inside it.
-- [ ] Action workflow passes on `ubuntu-latest` and `windows-latest`.
-- [ ] CodeQL and dependency review pass.
+- [x] Action workflow passes on `ubuntu-latest` and `windows-latest`: https://github.com/YamaTro/reproproof/actions/runs/29427107805.
+- [x] CodeQL passes: https://github.com/YamaTro/reproproof/actions/runs/29427107670.
+- [x] Dependency Review passes after enabling Dependency graph: https://github.com/YamaTro/reproproof/actions/runs/29427270832.
 - [ ] Cloud and local provider protocols have opt-in live smoke tests without committing keys.
 - [ ] Draft PR flow is live-tested in an owned disposable repository with minimal permissions.
 
 ## Replace placeholders
 
 - [x] Replace every `OWNER/reproproof` URL in templates and docs.
-- [ ] Add the real private security-reporting route.
+- [x] Enable GitHub private vulnerability reporting for the public repository.
 - [ ] Confirm package scope ownership before npm publication.
 - [ ] Add a factual copyright owner/year only if desired.
 
@@ -64,8 +65,8 @@ The tag command requires a configured signing key. If signing is unavailable, co
 
 ## Pages and package publication
 
-- [ ] Enable GitHub Pages with GitHub Actions as the source.
-- [ ] Verify the deployed URL and all links.
+- [x] Enable GitHub Pages with GitHub Actions as the source.
+- [x] Verify the deployed URL: https://yamatro.github.io/reproproof/.
 - [ ] Review packed npm contents and provenance configuration.
 - [ ] Publish packages only after ownership, 2FA/provenance, and workspace dependency rewriting are verified.
 

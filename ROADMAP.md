@@ -16,8 +16,9 @@ Goals are not achievements. Actuals are updated only with evidence.
 
 - Local monorepo, CLI, providers, Node/Python adapters, reports, two fixtures, and local quality gates implemented.
 - Docker controls implemented but not live-validated because Docker is absent locally.
-- Public repository, documentation site, GitHub-hosted CI, CodeQL, and Discussions: achieved.
-- v0.1.0 release, interviews, and external users: not yet achieved.
+- Public repository, documentation site, GitHub-hosted CI, CodeQL, Dependency Review, private vulnerability reporting, and Discussions: achieved.
+- v0.1.0 source release: achieved on 2026-07-16.
+- Maintainer interviews and external users: not yet achieved.
 
 ## Days 31–60
 

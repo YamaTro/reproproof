@@ -4,7 +4,7 @@
 
 ReproProof is for open-source maintainers who spend time translating issue prose into an actionable reproduction. Unlike issue-to-PR coding agents, it stops before the fix: maintainers receive missing-information questions, assumptions, a candidate test, exact execution evidence, Markdown/JSON reports, and a patch they can inspect.
 
-> Release-candidate status: the offline MVP works on controlled Node and Python fixtures. Public GitHub CI is active, but no external adoption is claimed and local execution is not a hardened security sandbox.
+> v0.1.0 source release: the offline MVP works on controlled Node and Python fixtures. Public GitHub CI, CodeQL, Dependency Review, and the cross-platform Action smoke test are active. No external adoption is claimed, and local execution is not a hardened security sandbox.
 
 [日本語 README](README.ja.md) · [Architecture](docs/architecture.md) · [Security](SECURITY.md) · [Roadmap](ROADMAP.md)
 
@@ -131,7 +131,7 @@ Issue text, repository files, comments, and model output are treated as untruste
 - Candidate semantic validation can still accept a test that fails for the wrong reason.
 - Dependency installation is not automated inside reproduction runs.
 - Docker and Draft PR paths are implemented but not live-validated against external infrastructure on this host.
-- The composite Action has a cross-platform public-runner smoke job; v0.1.0 will be tagged only after it passes.
+- The composite Action passed its Ubuntu and Windows public-runner smoke jobs for v0.1.0.
 - There are two controlled fixtures, not a representative benchmark.
 - Cloud-provider implementations require live opt-in testing and may need API-schema updates over time.
 

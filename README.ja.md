@@ -4,7 +4,7 @@
 
 ReproProof は、Issue の文章から再現手順や失敗テストを作る作業に時間を使っている OSS メンテナー向けの、ローカルファーストな CLI / GitHub Action です。修正 PR の自動生成を主目的にせず、修正前に必要な証拠を作ります。
 
-> リリース候補です。Node.js と Python の管理された fixture で動作し、公開 GitHub CI も稼働していますが、外部利用実績は主張しません。また、ローカル実行は強化された OS サンドボックスではありません。
+> v0.1.0 ソースリリースです。Node.js と Python の管理された fixture で動作し、公開 GitHub CI、CodeQL、Dependency Review、クロスプラットフォーム Action smoke test が稼働しています。外部利用実績は主張せず、ローカル実行は強化された OS サンドボックスではありません。
 
 ## 5分で試す
 
@@ -52,7 +52,7 @@ Issue、README、ソース、コメント、モデル出力はすべて信頼で
 
 - 誤った理由で失敗するテストを完全には判定できません。
 - Docker と Draft PR は実装済みですが、このホストでは外部インフラに対する実動検証が未完了です。
-- Composite Action には公開ランナー上のクロスプラットフォーム smoke job があり、成功後にのみ v0.1.0 をタグ付けします。
+- Composite Action は v0.1.0 向けの Ubuntu / Windows 公開ランナー smoke job に成功しています。
 - ベンチマークは管理された 2 fixture のみで、一般性能を示しません。
 
 ## 開発

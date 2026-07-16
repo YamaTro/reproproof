@@ -28,7 +28,7 @@ Source: [application form](https://openai.com/form/codex-for-oss/) and [program 
 
 ### ReproProof judgment
 
-ReproProof is not currently a credible applicant: the repository is public, but it has no release, external users, or established maintenance history. Apply only after public evidence shows active maintenance plus meaningful use or ecosystem importance.
+ReproProof is not currently a credible applicant: the repository has an initial public source release, but it has no external users or established maintenance history. Apply only after public evidence shows active maintenance plus meaningful use or ecosystem importance.
 
 ## Anthropic: Claude for Open Source
 

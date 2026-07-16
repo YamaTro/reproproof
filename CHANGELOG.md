@@ -4,6 +4,10 @@ All notable changes follow Keep a Changelog. Versions follow Semantic Versioning
 
 ## [Unreleased]
 
+No unreleased changes.
+
+## [0.1.0] - 2026-07-16
+
 ### Added
 
 - Provider-neutral core, CLI, offline mock provider, loopback local provider, OpenAI and Anthropic adapters.
@@ -19,8 +23,5 @@ All notable changes follow Keep a Changelog. Versions follow Semantic Versioning
 ### Known limitations
 
 - Docker execution and Draft PR writes are implemented but not yet live-validated against external infrastructure.
-- The composite Action has a cross-platform public-runner smoke job; its result must be green before v0.1.0 is tagged.
-
-## [0.1.0] - unreleased
-
-Release entry will be dated only when the tag and release actually exist.
+- Cloud and loopback provider protocols still require opt-in live validation.
+- The controlled fixtures are not a representative benchmark of real-world repositories.
