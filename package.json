@@ -22,11 +22,11 @@
     "sandbox:build": "docker build --tag reproproof-sandbox:0.1.0 --file sandbox/Dockerfile sandbox"
   },
   "devDependencies": {
-    "@eslint/js": "^9.29.0",
-    "@types/node": "^24.0.3",
-    "eslint": "^9.29.0",
-    "typescript": "^5.8.3",
-    "typescript-eslint": "^8.34.1",
-    "vitest": "^3.2.4"
+    "@eslint/js": "^10.0.1",
+    "@types/node": "^26.1.1",
+    "eslint": "^10.7.0",
+    "typescript": "^7.0.2",
+    "typescript-eslint": "^8.65.0",
+    "vitest": "^4.1.10"
   }
 }
